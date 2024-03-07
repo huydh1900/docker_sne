@@ -1,0 +1,17 @@
+.o_main_navbar {
+    background: var(--o-navbar-background);
+    border: none;
+}
+
+.o_form_button_save {
+    background: var(--o-form-button-save);
+}
+
+.o_navbar_apps_menu .dropdown-menu-custom {
+    background: var(--o-navbar-apps-menu);
+}
+// :root {
+//     .o_main_navbar, .o_form_button_save, .o_navbar_apps_menu .dropdown-menu-custom {
+//          background: #A24689;
+//     }
+// }

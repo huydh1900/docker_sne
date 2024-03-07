@@ -4,7 +4,6 @@ services:
     image: odoo:16.0
     platform: linux/x86_64
     container_name: odoo
-    restart: unless-stopped
     links:
       - db:db
     depends_on:
@@ -15,13 +14,10 @@ services:
       - odoo-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
-    networks:
-      - webnet
   db:
     image: postgres:14.0
     platform: linux/x86_64
     container_name: db
-    restart: unless-stopped
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
@@ -31,12 +27,8 @@ services:
       - "5210:5432"
     volumes:
       - db-data:/var/lib/postgresql/odoo
-    networks:
-      - webnet
 
 volumes:
   odoo-data:
   db-data:
 
-networks:
-  webnet:
